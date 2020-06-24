@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.post('/', (req, res, next)=>{
     res.status(200).json({
-        message: 'Handling POST request to /orders'
+        message: 'Handling POST request to /orders/'
     })
 })
 router.get('/', (req, res, next)=>{
