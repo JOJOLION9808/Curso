@@ -2,16 +2,24 @@ const express = require('express')
 const router = express.Router()
 
 router.post('/', (req, res, next)=>{
+    const order ={
+        name: req.body.name,
+        price: req.body.price
+    }
+    
     res.status(200).json({
-        message: 'Handling POST request to /orders'
+        message: 'Handling POST request to /orders',
+        createOrder: order
+
     })
 })
+
 router.get('/', (req, res, next)=>{
     res.status(200).json({
         message: 'Handling GET request to /orders'
     })
 })
-    router.get('/:orderId', (req, res, next)=>{
+router.get('/:orderId', (req, res, next)=>{
         const id= req.params.orderId
     
      if (id === 'luisFernando2'){
@@ -26,9 +34,9 @@ router.get('/', (req, res, next)=>{
          })
      }
     })
-    router.delete('/orderId', (req, res, next)=>{
+router.delete('/orderId', (req, res, next)=>{
         res.status(200).json({
             message: 'Deleted'
         })
     })
-    module.exports = router
+module.exports = router
