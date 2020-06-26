@@ -2,8 +2,15 @@ const express = require('express')
 const router = express.Router()
 
 router.post('/', (req, res, next)=>{
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    }   
+ 
+
     res.status(200).json({
-        message: 'Handling POST request to /products'
+        message: 'Handling POST request to /products',
+        Productnew: product
     })
 })
 router.get('/', (req, res, next)=>{
